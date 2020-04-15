@@ -1,7 +1,7 @@
 var kr = new Object();
 //-------------------参数设置区 开始-------------------
     kr.thome = "/";
-    kr.ctime = "03/24/2018 15:31:36";
+    kr.ctime = "09/18/2018 15:31:36";
     kr.donate = "支持我~";
     kr.scan = "扫一扫，好不好？";
     kr.alipay = "/images/alipayqr.jpg";
