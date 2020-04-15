@@ -1,7 +1,7 @@
 # Global
 site_analytics: 
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
-site_logo: /images/favicon.png
+site_logo: /images/favicon.ico
 snow: false
 
 # Top Menu
@@ -12,8 +12,8 @@ menu:
   about: /about/
   tools:
     submenu: true
-    candifonts: https://fonts.candys.dev
-    candidenty: https://id.candys.dev
+    candifonts: /
+    candidenty: /
 
 label:
   index: <i class="fa fa-home"></i>&nbsp;首页
@@ -22,8 +22,8 @@ label:
   about: <i class="fa fa-rocket"></i>&nbsp;关于我
   tools:
     submenu: <i class="fa fa-flask"></i>&nbsp;实验室
-    candifonts: 缤纷字生成
-    candidenty: 身份证工具
+    candifonts: 什么都没有
+    candidenty: 即将到来
 
 # Footer
 qqg_link: 
@@ -31,10 +31,11 @@ contact:
   weibo: 
   tweibo: 
   mail: 
-  twitter: 
+  twitter: https://twitter.com/youmohoshi
   facebook: 
   linkedin: 
-  github: 
+  github: https://github.com/vensing
+  rss: /atom.xml
   
 # Post Page
 posts:
@@ -45,16 +46,16 @@ posts:
 
 # Disqus
 disqus:
-  shortname: 
+  shortname: vensing-com
 
 # DisqusJS
 disqusjs:
-  shortname: 
-  sitename: 
-  api: 
-  apikey: 
-  admin: 
-  adminlabel: 
+  shortname: vensing-com
+  sitename: vensing-com
+  api: https://disqusjs-api.vensing.workers.dev/api/
+  apikey: bOXtpQHaIHfxsR4VGqOUNxojF6FGpwKEst7Cj3Pxo5IEAKrriBmIoxp3eegUxSqp
+  admin: Vexsy
+  adminlabel: 风月
 
 # Widgets
 sidebar: right
@@ -63,7 +64,7 @@ widgets:
 - category
 - tagcloud
 - posts
-avatarUri: /images/avatar.png
+avatarUri: /images/avatar.jpg
 
 # Code Highlight Themes: normal | night | night eighties | night blue | night bright
 highlight_theme: night eighties
