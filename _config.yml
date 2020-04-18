@@ -3,6 +3,7 @@ site_analytics:
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
 site_logo: /images/favicon.ico
 snow: false
+aplayer: false
 
 # Top Menu
 menu:
@@ -15,6 +16,7 @@ menu:
     candifonts: /
     candidenty: /
 
+
 label:
   index: <i class="fa fa-home"></i>&nbsp;首页
   archives: <i class="fa fa-file"></i>&nbsp;档案馆
@@ -24,6 +26,7 @@ label:
     submenu: <i class="fa fa-flask"></i>&nbsp;实验室
     candifonts: 什么都没有
     candidenty: 即将到来
+
 
 # Footer
 qqg_link: 
@@ -36,6 +39,7 @@ contact:
   linkedin: 
   github: https://github.com/vensing
   rss: /atom.xml
+
 
 # Post Page
 posts:
@@ -51,7 +55,7 @@ disqus:
 # DisqusJS
 disqusjs:
   shortname: vensing-com
-  sitename: vensing-com
+  sitename: vensing
   api: https://disqusjs-api.vensing.workers.dev/api/
   apikey: bOXtpQHaIHfxsR4VGqOUNxojF6FGpwKEst7Cj3Pxo5IEAKrriBmIoxp3eegUxSqp
   admin: Vexsy
