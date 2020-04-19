@@ -3,7 +3,6 @@ site_analytics:
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
 site_logo: /images/favicon.ico
 snow: false
-aplayer: false
 
 # Top Menu
 menu:
@@ -38,8 +37,7 @@ contact:
   facebook: 
   linkedin: 
   github: https://github.com/vensing
-  rss: /atom.xml
-
+  rss: atom.xml
 
 # Post Page
 posts:
@@ -61,6 +59,12 @@ disqusjs:
   admin: Vexsy
   adminlabel: 风月
 
+# APlayer
+aplayer:
+  enabled: false
+  playlist: 
+  order: random
+
 # Widgets
 sidebar: right
 widgets:
@@ -72,3 +76,6 @@ avatarUri: /images/avatar.jpg
 
 # Code Highlight Themes: normal | night | night eighties | night blue | night bright
 highlight_theme: night eighties
+
+# Fancybox
+fancybox: true
