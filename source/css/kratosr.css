@@ -565,3 +565,10 @@ td.code {
 .twitter-tweet {
   margin: auto;
 }
+
+.kratos-post-content .caption {
+  display: block;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+}
