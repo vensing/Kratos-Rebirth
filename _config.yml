@@ -75,7 +75,7 @@ widgets:
 avatarUri: /images/avatar.jpg
 
 # Code Highlight Themes: normal | night | night eighties | night blue | night bright
-highlight_theme: night eighties
+highlight_theme: normal
 
 # Fancybox
 fancybox: true
