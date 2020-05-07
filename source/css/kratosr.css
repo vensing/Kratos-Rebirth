@@ -44,7 +44,7 @@ blockquote.pull-right{padding-right:15px;padding-left:0;text-align:right;border-
 caption{padding-top:8px;padding-bottom:8px;color:#777;text-align:left}
 cite{font-style:normal}
 code,pre,samp{font-family:Menlo,Monaco,Consolas,"Courier New",monospace}
-/* code{padding:2px 4px;font-size:90%;color:#333;background-color:#f8f8f8;border-radius:0;border:1px solid #e1e1e1;margin:0 5px} */
+code{padding:2px 4px;font-size:90%;color:#333;background-color:#f8f8f8;border-radius:0;border:1px solid #e1e1e1;margin:0 5px}
 dfn{font-style:italic}
 dl{margin-top:0;margin-bottom:20px}
 dd,dt{line-height:1.42857143}
@@ -64,9 +64,9 @@ h4{font-size:1.0em}
 h5{font-size:1.0em}
 h6{font-size:1.0em}
 h2.title-h2{margin:15px -20px;padding:0 20px;border-left:5px solid #51aded;background-color:#f7f7f7;font-size:20px;line-height:40px}
-hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}
+hr{height:23px;margin-top:20px;margin-bottom:20px;border:0;background-image: url(/images/hr.gif);background-repeat: no-repeat;background-position: center;}
 img{vertical-align:middle}
-/* code{font-size:90%;color:#fff;border-radius:3px;padding:1px 6px;background-color:#6c6c6c} */
+code{font-size:90%;color:#fff;border-radius:3px;padding:1px 6px;background-color:#6c6c6c}
 legend{display:block;width:100%;padding:0;margin-bottom:20px;font-size:21px;line-height:inherit;color:#333;border:0;border-bottom:1px solid #e5e5e5}
 label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:700}
 legend{padding:0;border:0}
