@@ -19,7 +19,7 @@ menu:
 label:
   index: <i class="fa fa-home"></i>&nbsp;首页
   archives: <i class="fa fa-file"></i>&nbsp;档案馆
-  friends: <i class="fa fa-mars-double"></i>&nbsp;后宫团
+  friends: <i class="fa fa-mars-double"></i>&nbsp;朋友们
   about: <i class="fa fa-rocket"></i>&nbsp;关于我
   tools:
     submenu: <i class="fa fa-flask"></i>&nbsp;实验室
