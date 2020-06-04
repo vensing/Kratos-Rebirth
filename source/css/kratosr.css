@@ -548,11 +548,11 @@ td.code {
     .kratos-hentry,
     .navigation div,
     #kratos-widget-area .widget {background-color: rgba(255, 255, 255, .8) !important}
-    body.custom-background {
+    /* body.custom-background {
         background-image: url(/images/index_image.png);
         background-size: cover;
         background-attachment: fixed
-    }
+    } */
 }
 
 @media(max-width:768px) {
