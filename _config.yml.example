@@ -1,7 +1,7 @@
 # Global
 site_analytics: 
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
-site_logo: /images/favicon.ico
+site_logo: /images/favicon.png
 snow: false
 
 # Top Menu
@@ -12,20 +12,26 @@ menu:
   about: /about/
   tools:
     submenu: true
-    candifonts: /
-    candidenty: /
-
+    candifonts: https://fonts.candys.dev
+    candidenty: https://id.candys.dev
+  sites:
+    submenu: true
+    oldapi: https://old-api.lcy.moe
+    newapi: https://api.lcy.moe
 
 label:
   index: <i class="fa fa-home"></i>&nbsp;首页
   archives: <i class="fa fa-file"></i>&nbsp;档案馆
-  friends: <i class="fa fa-mars-double"></i>&nbsp;朋友们
+  friends: <i class="fa fa-mars-double"></i>&nbsp;后宫团
   about: <i class="fa fa-rocket"></i>&nbsp;关于我
   tools:
     submenu: <i class="fa fa-flask"></i>&nbsp;实验室
-    candifonts: 什么都没有
-    candidenty: 即将到来
-
+    candifonts: 缤纷字生成
+    candidenty: 身份证工具
+  sites:
+    submenu: <i class="fa fa-link"></i>&nbsp;小小站
+    oldapi: 过气的老API
+    newapi: 新API(建设中)
 
 # Footer
 qqg_link: 
@@ -33,12 +39,12 @@ contact:
   weibo: 
   tweibo: 
   mail: 
-  twitter: https://twitter.com/youmohoshi
+  twitter: 
   facebook: 
   linkedin: 
-  github: https://github.com/vensing
+  github: 
   rss: atom.xml
-
+  
 # Post Page
 posts:
   show_cc: true
@@ -48,20 +54,20 @@ posts:
 
 # Disqus
 disqus:
-  shortname: vensing-com
+  shortname: 
 
 # DisqusJS
 disqusjs:
-  shortname: vensing-com
-  sitename: vensing
-  api: https://disqusjs-api.vensing.workers.dev/api/
-  apikey: bOXtpQHaIHfxsR4VGqOUNxojF6FGpwKEst7Cj3Pxo5IEAKrriBmIoxp3eegUxSqp
-  admin: Vexsy
-  adminlabel: 风月
+  shortname: 
+  sitename: 
+  api: 
+  apikey: 
+  admin: 
+  adminlabel: 
 
 # APlayer
 aplayer:
-  enabled: false
+  enabled: true
   playlist: 
   order: random
 
@@ -72,10 +78,10 @@ widgets:
 - category
 - tagcloud
 - posts
-avatarUri: /images/avatar.jpg
+avatarUri: /images/avatar.png
 
 # Code Highlight Themes: normal | night | night eighties | night blue | night bright
-highlight_theme: normal
+highlight_theme: night eighties
 
 # Fancybox
 fancybox: true

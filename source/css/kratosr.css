@@ -44,7 +44,7 @@ blockquote.pull-right{padding-right:15px;padding-left:0;text-align:right;border-
 caption{padding-top:8px;padding-bottom:8px;color:#777;text-align:left}
 cite{font-style:normal}
 code,pre,samp{font-family:Menlo,Monaco,Consolas,"Courier New",monospace}
-code{padding:2px 4px;font-size:90%;color:#333;background-color:#f8f8f8;border-radius:0;border:1px solid #e1e1e1;margin:0 5px}
+code{padding:2px 4px;font-size:90%;color:white;background-color:#666;border-radius:.2em;margin:0 5px}
 dfn{font-style:italic}
 dl{margin-top:0;margin-bottom:20px}
 dd,dt{line-height:1.42857143}
@@ -83,15 +83,11 @@ sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}
 sup{top:-.5em}
 sub{bottom:-.25em}
 svg:not(:root){overflow:hidden}
-table,table tbody tr th{text-align:center!important}
-table{background-color:transparent}
-th{text-align:left}
+th{color:white;background:deepskyblue;}
 table col[class*=col-]{position:static;display:table-column;float:none}
 table td[class*=col-],table th[class*=col-]{position:static;display:table-cell;float:none}
-textarea{overflow:auto}
-table{border-spacing:0;border-collapse:collapse}
-td,th{padding:5px;border: 1px solid lightblue;}
-thead{background-color: lightblue;}
+table {border-spacing:0;border-collapse:collapse;margin:2em 1em}
+td,th {padding:.2em 1em;border: 1px solid lightblue;}
 .btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-transform:uppercase;letter-spacing:2px;-webkit-transition:.3s;transition:.3s}
 .btn:active,.btn:focus,.btn:hover{background:#393e46!important;color:#fff;outline:0!important;cursor:pointer}
 .btn-primary{border-color:#51aded;background-color:#51aded;color:#fff}
@@ -272,7 +268,7 @@ thead{background-color: lightblue;}
 .kratos-post-inner-new header .label-link:after{position:absolute;width:0;height:0;vertical-align:top;content:"";top:6px;right:-4px;border-left:4px solid #51aded;border-top:4px solid transparent;border-bottom:4px solid transparent;}
 .kratos-post-inner-new header .label-link:hover{color:#fff!important}
 .kratos-post-content{word-break:break-all;word-wrap:break-word;margin:10px}
-.kratos-post-content p{margin-bottom:1em;font-size:16px;color:#333}
+.kratos-post-content p{margin-bottom:1em;font-size:16px;color:#333;margin:1em}
 .kratos-post-content img{height:auto;max-width:100%;display:block;margin:0 auto;border-radius:2px}
 .kratos-post-content embed{max-width:100%}
 .kratos-post-content div{margin:auto;}
