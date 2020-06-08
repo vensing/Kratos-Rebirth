@@ -13,7 +13,7 @@
   <!-- 对OG做了适配，但是暂时没有必要加入到pjax里面，因为这些用户看不到，爬虫爬的时候也不会使用pjax来跳转。 -->
   <% if (is_post()) { %>
     <% if (page.excerpt) { %>
-      <meta name="description" itemprop="description" content="<%- strip_html(strip_html(page.excerpt)) %>">
+      <meta name="description" itemprop="description" content="<%- strip_html(page.excerpt) %>">
       <meta name="keywords" content="<%- strip_html(list_tags(page.tags, { show_count: false, style: 'none' })) %>">
     <% } else { %>
       <meta name="description" itemprop="description" content="<%- config.description %>">
@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
   <% } %>
   <!-- 不得不预先加载的一些JS文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
   <% if (theme.posts.share) { %>
     <script async src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
   <% } %>
