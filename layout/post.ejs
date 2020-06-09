@@ -1,4 +1,5 @@
 <section id="main" class="col-md-8">
+    <% let aboutShowToc = is_post() && theme.widgets.includes('toc') && strip_html(toc(page.content)); %>
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
@@ -14,12 +15,12 @@
                 </div>
             </header>
             <div class="kratos-post-content">
-                <% if (page.toc) { %>
+                <% if (aboutShowToc && page.toc) { %>
                     <div class="kratos-post-inner-toc">
                         <%- toc(page.content) %>
                     </div>
                 <% } %>
-                <hr />
+                <!-- <hr /> -->
                 <%- page.content %>
             </div>
             <% if (theme.posts.show_cc) { %>
