@@ -403,7 +403,7 @@ td,th {padding:.2em 1em;border: 1px solid lightblue;}
 #footer .kratos-social-icons li a i{font-size:36px}
 #footer .kratos-copyright{padding-left: 0}
 #footer .kratos-copyright{list-style: none}
-#footer .kratos-copyright li{color:rgba(255,255,255,.3);line-height:1;margin-left:1em;font-size:14px}
+#footer .kratos-copyright li{color:rgba(255,255,255,.3);line-height:1;margin-left:0;font-size:14px}
 @media screen and (max-width: 550px){#footer .kratos-copyright li{display:block;margin-top:1em}}
 #footer .kratos-copyright:first-child{margin-top:25px}
 .linkpage ul{color:rgba(255,255,255,.15)}
