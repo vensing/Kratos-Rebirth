@@ -11,6 +11,7 @@ menu:
   friends: /friends/
   about: /about/
   one: /one/
+  movie: /movie/
   tools:
     submenu: true
     candifonts: /
@@ -22,7 +23,8 @@ label:
   archives: <i class="fa fa-archive"></i>&nbsp;档案馆
   friends: <i class="fa fa-mars-double"></i>&nbsp;朋友们
   about: <i class="fa fa-rocket"></i>&nbsp;关于我
-  one: <i class="fa fa fa-podcast"></i>&nbsp;One图文
+  one: <i class="fa fa-podcast"></i>&nbsp;One图文
+  movie: <i class="fa fa-film"></i>&nbsp;电影日历
   tools:
     submenu: <i class="fa fa-flask"></i>&nbsp;实验室
     candifonts: 什么都没有
