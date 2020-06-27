@@ -2,17 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title><% if (page.title) { %><%- page.title %> | <% } %><%= config.title %></title>
+  <title><% if (page.title) { %><%- page.title %> | <% } %><%- config.title %></title>
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="robots" content="index,follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
-  <!-- 对OG做了适配，但是暂时没有必要加入到pjax里面，因为这些用户看不到，爬虫爬的时候也不会使用pjax来跳转。 -->
   <% if (is_post()) { %>
     <% if (page.excerpt) { %>
-      <meta name="description" itemprop="description" content="<%- strip_html(page.excerpt) %>" />
+      <meta name="description" itemprop="description" content="<%- trim(strip_html(page.excerpt)) %>" />
       <meta name="keywords" content="<%- strip_html(list_tags(page.tags, { show_count: false, style: 'none' })) %>" />
     <% } else { %>
       <meta name="description" itemprop="description" content="<%- config.description %>" />
@@ -22,13 +21,12 @@
       <meta property="og:image" content="<%- full_url_for(page.path + page.pic) %>" />
     <% } %>
     <meta property="og:url" content="<%- page.permalink %>" />
-    
     <% if (theme.contact.twitter) { %>
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@<%- theme.contact.twitter %>" />
       <meta name="twitter:title" content="<%- page.title %>" />
       <% if (page.excerpt) { %>
-        <meta name="twitter:description" content="<%- strip_html(page.excerpt) %>" />
+        <meta name="twitter:description" content="<%- trim(strip_html(page.excerpt)) %>" />
       <% } else { %>
         <meta name="twitter:description" content="<%- config.description %>" />
       <% } %>
@@ -37,7 +35,7 @@
       <% } %>
     <% } %>
   <% } else { %>
-    <meta name="description" itemprop="description" content="<%- config.description %>" />
+    <meta name="description" itemprop="description" content="<%- page.description || config.description %>" />
     <meta name="keywords" content="<%- config.keywords %>" />
     <meta property="og:title" content="<%- page.title || config.title %>" />
     <meta property="og:image" content="<%- full_url_for(theme.site_logo) %>" />
@@ -46,7 +44,7 @@
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@<%- theme.contact.twitter %>" />
       <meta name="twitter:title" content="<%- page.title || config.title %>" />
-      <meta name="twitter:description" content="<%- config.description %>" />
+      <meta name="twitter:description" content="<%- page.description || config.description %>" />
       <meta name="twitter:image" content="<%- full_url_for(theme.site_logo) %>" />
     <% } %>
   <% } %>
@@ -58,13 +56,15 @@
   <%- css('css/ext') %>
   <% if (theme.posts.comments == 'disqusjs') { %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.6/dist/disqusjs.css">
-    <style>#dsqjs{padding:10px 15px;}#dsqjs-msg{color:#2a2e2e;background-color:#ebeef2;padding:10px;border-radius:5px;}</style>
   <% } %>
   <% if (theme.aplayer.enabled) { %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
   <% }%>
   <% if (theme.fancybox){ %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <% } %>
+  <% if (theme.enableDark) { %>
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.css" type="text/css" media="all">
   <% } %>
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

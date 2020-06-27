@@ -3,6 +3,7 @@ site_analytics:
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
 site_logo: /images/favicon.ico
 snow: false
+enableDark: true
 
 # Top Menu
 menu:
@@ -19,14 +20,14 @@ menu:
 
 
 label:
-  index: <i class="fa fa-home"></i>&nbsp;首页
-  archives: <i class="fa fa-archive"></i>&nbsp;档案馆
-  friends: <i class="fa fa-mars-double"></i>&nbsp;朋友们
-  about: <i class="fa fa-rocket"></i>&nbsp;关于我
-  one: <i class="fa fa-podcast"></i>&nbsp;One图文
-  movie: <i class="fa fa-film"></i>&nbsp;电影日历
+  index: <i class="fa fa-home"></i>首页
+  archives: <i class="fa fa-archive"></i>档案馆
+  friends: <i class="fa fa-mars-double"></i>朋友们
+  about: <i class="fa fa-rocket"></i>关于我
+  one: <i class="fa fa-podcast"></i>ONE 图文
+  movie: <i class="fa fa-film"></i>电影日历
   tools:
-    submenu: <i class="fa fa-flask"></i>&nbsp;实验室
+    submenu: <i class="fa fa-flask"></i>实验室
     candifonts: 什么都没有
     candidenty: 即将到来
 
@@ -35,13 +36,16 @@ label:
 qqg_link: 
 contact:
   weibo: 
-  tweibo: 
   mail: 
   twitter: https://twitter.com/youmohoshi
   facebook: 
-  linkedin: 
+  linkedin:
+  fediverse:
+    instance:
+    username: 
   github: https://github.com/vensing
   rss: atom.xml
+timenotice: 本站已运行
 
 # Post Page
 posts:
@@ -60,8 +64,8 @@ disqusjs:
   sitename: vensing
   api: https://disqusjs-api.vensing.workers.dev/api/
   apikey: bOXtpQHaIHfxsR4VGqOUNxojF6FGpwKEst7Cj3Pxo5IEAKrriBmIoxp3eegUxSqp
-  admin: Vexsy
-  adminlabel: 风月
+  admin: Cheese
+  adminlabel: 芝士
 
 # APlayer
 aplayer:
