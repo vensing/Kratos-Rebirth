@@ -6,7 +6,7 @@
 
     --banner-image: url('/images/banner.jpg');
     --about-image: url('/images/about.jpg');
-    --background-image: url('/images/bg.png');
+    /*--background-image: url('/images/bg.png');*/
 
     --text: #000;
     --text-alt: #666;
@@ -15,7 +15,7 @@
     --border: #3c495b3a;
     --tag-background: #fff;
     --card-background: rgba(255, 255, 255, .8);
-    --page-background: none;
+    --page-background: #e6e6e6;
     --info-background: rgba(220,220,220,.3);
     --navbar-desktop: rgba(40,42,44,.6);
     --navbar-mobile: rgba(22, 23, 26, .9);
