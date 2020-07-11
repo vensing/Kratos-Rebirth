@@ -1,50 +1,37 @@
-var kr = new Object();
+let kr = {};
 //-------------------参数设置区 开始-------------------
     kr.thome = "/";
     kr.ctime = "09/18/2018 15:31:36";
-    kr.donate = "支持我~";
-    kr.scan = "扫一扫，好不好？";
-    kr.alipay = "/images/alipayqr.jpg";
-    kr.wechat = "/images/wechatpayqr.png";
-    kr.copy_notify = false;
-    kr.copy_notify_text = "欢迎转载，请记得标明出处哦~";
-    kr.enable_site_leave_event = false;
-    kr.site_logo_leave = "images/failure.ico";
-    kr.site_title_leave = "{{{(>_<)}}}哦哟，崩溃啦~ ";
-    kr.site_title_return = "(*´∇｀*)欸，又好啦~ ";
+    kr.donateBtn = "支持我~";
+    kr.scanNotice = "扫一扫，好不好？";
+    kr.qr_alipay = "/images/alipayqr.jpg";
+    kr.qr_wechat = "/images/wechatpayqr.png";
+    kr.siteLeaveEvent = true;
+    // kr.leaveLogo = "/images/failure.ico";
+    kr.leaveTitle = "{{{(>_<)}}}哦哟，崩溃啦~";
+    kr.returnTitle = "(*´∇｀*)欸，又好啦~";
+    kr.copyrightNotice = `该内容采用 CC BY-NC-SA 4.0 许可协议，著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。`;
 //-------------------参数设置区 结束-------------------
 
-(function(){
-    const shareMenu = ()=>{
-        $(document).on("click",".Share",()=>{$(".share-wrap").fadeToggle("slow");});
-    };
-    
-    // var toSearch = function(){
-    //     $('.search-box').on("click",function(e){
-    //         $("#searchform").animate({width:"200px"},200),
-    //         $("#searchform input").css('display','block');
-    //         $(document).one("click", function(){
-    //             $("#searchform").animate({width:"0"},100),
-    //             $("#searchform input").hide();
-    //         });
-    //         e.stopPropagation();
-    //     });
-    //     $('#searchform').on("click",function(e){e.stopPropagation();})
-    // }
+(()=>{
     const gotopInit = ()=>{
+        const toolScroll = ()=>{
+            if ($(window).scrollTop()>200){
+                $('.kr-tool').addClass('scroll-down');
+            } else {
+                $('.kr-tool').removeClass('scroll-down');
+            }
+        }
         $('.gotop-box').on('click',function(event){
-            event.preventDefault();
+            // event.preventDefault();
             $('html, body').animate({
                 scrollTop:$('html').offset().top
             },500);
             return false;
         });
+        toolScroll();
         $(window).scroll(()=>{
-            if ($(window).scrollTop()>200){
-                $('.kr-tool').addClass('scroll-down');
-            }else{
-                $('.kr-tool').removeClass('scroll-down');
-            }
+            toolScroll();
         });
     };
     const offcanvas = ()=>{
@@ -69,7 +56,7 @@ var kr = new Object();
         $('#offcanvas-menu').css('height',$(window).height());
         $('#offcanvas-menu').css('right','-240px');
         $(window).resize(()=>{
-            var w = $(window);
+            const w = $(window);
             $('#offcanvas-menu').css('height',w.height());
             if(w.width()>769){
                 if($('.nav-toggle').hasClass('toon')){
@@ -90,27 +77,26 @@ var kr = new Object();
             }
         });
     };
-    // const xControl = ()=>{
-    //     $(document).on("click",".xHeading",()=>{
-    //         var $this = $(this);
-    //         $this.closest('.xControl').filter('.xContent').slideToggle(300);
-    //         if ($this.closest('.xControl').hasClass('active')){
-    //             $this.closest('.xControl').removeClass('active');
-    //         }else{
-    //             $this.closest('.xControl').addClass('active');
-    //         }
-    //         event.preventDefault();
-    //     });
-    // };
+    const xControl = ()=>{
+        $(document).on("click",".xHeading", function(event){
+            $(this).next().slideToggle(300);
+            if ($(this).parent('.xControl').hasClass('active')){
+                $(this).parent('.xControl').removeClass('active');
+            } else {
+                $(this).parent('.xControl').addClass('active');
+            }
+            event.preventDefault();
+        });
+    };
     // const donateConfig = ()=>{
-    //     $(document).on("click",".Donate",()=>{
+    //     $(document).on("click",".donate",()=>{
     //         layer.open({
     //             type:1,
     //             area:['300px', '370px'],
-    //             title:kr.donate,
+    //             title:kr.donateBtn,
     //             resize:false,
     //             scrollbar:false,
-    //             content:'<div class="donate-box"><div class="meta-pay text-center"><strong>'+kr.scan+'</strong></div><div class="qr-pay text-center"><img class="pay-img" id="alipay_qr" src="'+kr.alipay+'"><img class="pay-img d-none" id="wechat_qr" src="'+kr.wechat+'"></div><div class="choose-pay text-center mt-2"><input id="alipay" type="radio" name="pay-method" checked><label for="alipay" class="pay-button"><img src="' + kr.thome + 'images/alipay.png"></label><input id="wechatpay" type="radio" name="pay-method"><label for="wechatpay" class="pay-button"><img src="' + kr.thome + 'images/wechat.png"></label></div></div>'
+    //             content:'<div class="donate-box"><div class="meta-pay text-center"><strong>'+kr.scanNotice+'</strong></div><div class="qr-pay text-center"><img class="pay-img" id="alipay_qr" src="'+kr.qr_alipay+'"><img class="pay-img d-none" id="wechat_qr" src="'+kr.qr_wechat+'"></div><div class="choose-pay text-center mt-2"><input id="alipay" type="radio" name="pay-method" checked><label for="alipay" class="pay-button"><img src="' + kr.thome + 'images/alipay.png"></label><input id="wechatpay" type="radio" name="pay-method"><label for="wechatpay" class="pay-button"><img src="' + kr.thome + 'images/wechat.png"></label></div></div>'
     //         });
     //         $(".choose-pay input[type='radio']").click(()=>{
     //             var id = $(this).attr("id");
@@ -119,6 +105,9 @@ var kr = new Object();
     //         });
     //     });
     // };
+    const shareMenu = ()=>{
+        $(document).on("click",".share",()=>{$(".share-wrap").fadeToggle("slow");});
+    };
 
     const setrandpic = ()=>{
         //图片
@@ -158,26 +147,82 @@ var kr = new Object();
         });
     };
 
+    let copyrightString;
+    const setCopyright = ()=>{
+        copyrightString = `
+
+-------------------------
+${kr.copyrightNotice}
+作者：${document.querySelector("meta[name='author']").getAttribute('content')}
+来源：${document.title}
+链接：${window.location.href}
+`;
+    }
+
+    const copyEvent = ()=>{
+        if (kr.copyrightNotice) {
+            document.body.oncopy = (e)=>{
+                e.preventDefault();
+                if (e.clipboardData) {
+                    e.clipboardData.setData("text/plain", window.getSelection().toString() + copyrightString);
+                }
+            };
+        }
+    };
+
+    let docTitle = '';
+    const saveTitle = () => {
+        docTitle = document.title;
+    };
+
+    const leaveEventInit = () => {
+        if (kr.siteLeaveEvent) {
+            let titleTime;
+            const OriginLogo = $('[rel="icon"]').attr("href");
+            document.addEventListener('visibilitychange', ()=>{
+                if (document.hidden) {
+                    document.title = kr.leaveTitle;
+                    if (kr.leaveLogo) {
+                        $('[rel="icon"]').attr("href", kr.leaveLogo);
+                    }
+                    clearTimeout(titleTime);
+                } else {
+                    document.title = kr.returnTitle + " " + docTitle;
+                    if (kr.leaveLogo) {
+                        $('[rel="icon"]').attr("href", OriginLogo);
+                    }
+                    titleTime = setTimeout(()=>{
+                        document.title = docTitle;
+                        titleTime = 0;
+                    }, 2000);
+                }
+            });
+        }
+    };
+
     $.fn.pjax_reload = ()=>{
         setrandpic();
         fancyboxInit();
+        setCopyright();
+        saveTitle();
     };
 
     $(()=>{
-        shareMenu();
         gotopInit();
-        // toSearch();
         offcanvas();
         mobiClick();
-        // xControl();
+        xControl();
         // donateConfig();
+        shareMenu();
         tocNavInit();
         $(this).pjax_reload();
+        copyEvent();
+        leaveEventInit();
     });
-}());
+})();
 
-{
-    var now = new Date();
+(()=>{
+    let now = new Date();
     const grt = new Date(kr.ctime);
     const upTimeNode = document.getElementById("span_dt");
     setInterval(()=>{
@@ -191,31 +236,8 @@ var kr = new Object();
         if(String(snum).length==1){snum = "0"+snum;}
         upTimeNode.innerText = dnum+"天"+hnum+"小时"+mnum+"分"+snum+"秒";
     }, 1000);
-}
-
-if (kr.copy_notify) {
-    document.body.oncopy = ()=>{alert(kr.copy_notify_text);}
-}
+})();
 
 window.onload = ()=>{
-    console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','background:#fff;color:#333;text-shadow:0 0 2px #eee,0 0 3px #eee,0 0 3px #eee,0 0 2px #eee,0 0 3px #eee;');
+    console.log('页面加载完毕消耗了 %c'+Math.round(performance.now()*100)/100+' ms','background:#282c34;color:#51aded;');
 };
-
-if (kr.enable_site_leave_event) {
-    var OriginTitile, titleTime;
-    const OriginLogo = $('[rel="icon"]').attr("href");
-    document.addEventListener('visibilitychange', ()=>{
-        if (document.hidden) {
-            OriginTitile = document.title;
-            document.title = kr.site_title_leave + OriginTitile;
-            $('[rel="icon"]').attr("href", kr.thome + kr.site_logo_leave);
-            clearTimeout(titleTime);
-        } else {
-            document.title = kr.site_title_return + OriginTitile;
-            $('[rel="icon"]').attr("href", OriginLogo);
-            titleTime = setTimeout(()=>{
-                document.title = OriginTitile;
-            }, 2000);
-        }
-    });
-}
