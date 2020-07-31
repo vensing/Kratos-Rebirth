@@ -22,7 +22,7 @@
 
 1. 为了防止更新时配置文件的更新覆盖掉您的配置文件，主题的主配置文件是需要您**手动**复制一份`_config.yml.example`，并删除后缀的`.example`才可正常读取与使用的，请千万不要忘记啦。
 
-2. 在运行之前，还请您将`_config.yml.site.example`文件内的数据，复制到您**站点**的_config.yml中，否则可能会对相关代码的功能造成影响。
+2. 在运行之前，还请您将`_config.yml.site.example`文件（注意这里是站点配置文件，不是上面那边的主题配置了）内的数据，复制到您**站点**的_config.yml中，否则可能会对相关代码的功能造成影响。后续会想办法将追加的站点配置文件合并入主题配置文件中。
 
 3. 另外也有不少被Javascript调用的配置项是写在相关的js文件里面的(例如主js文件，原始文件`src/js/kratosr.js`，压缩后的文件`source/js/kratosr.min.js`)，之后如果有机会统一归并的话会想办法整合起来哒（没有放在站点配置里是因为没找到合适的方法对js进行注入，同时为了压缩空间无奈就分了很多出来（逃）
 
@@ -45,16 +45,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "hexo generate && npx gulp",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.2.0"
+    "version": "4.2.1"
   },
   "dependencies": {
-    "hexo": "^4.2.0",
+    "hexo": "^4.2.1",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^2.2.0",
@@ -69,7 +69,7 @@
 }
 ```
 
-之后也会找时间升级到 Hexo 5.0 哒
+master 分枝后续可能会引入一些 Hexo 5 开始的独有的特性，为防止出现冲突，使用当前分枝作为 Hexo 4 (4.2.1) 的保留备份。
 
 ## 关于二次开发
 
