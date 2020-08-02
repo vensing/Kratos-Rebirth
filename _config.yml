@@ -16,7 +16,7 @@ menu:
   movie: /movie/
   tools:
     submenu: true
-    candifonts: /
+    cesium-wind: /cesium-wind
     candidenty: /
 
 
@@ -29,7 +29,7 @@ label:
   movie: <i class="fa fa-film"></i>电影日历
   tools:
     submenu: <i class="fa fa-flask"></i>实验室
-    candifonts: 什么都没有
+    cesium-wind: 风场动画
     candidenty: 即将到来
 
 
@@ -39,7 +39,7 @@ contact:
   weibo:
   mail:
   telegram:
-  twitter: youmohoshi
+  twitter: youmuhoshi
   facebook: 
   linkedin:
   fediverse:
