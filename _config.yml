@@ -17,7 +17,7 @@ menu:
   tools:
     submenu: true
     cesium-wind: /cesium-wind
-    candidenty: /
+    ol-meteo: /ol-meteo
 
 
 label:
@@ -30,7 +30,7 @@ label:
   tools:
     submenu: <i class="fa fa-flask"></i>实验室
     cesium-wind: 风场动画
-    candidenty: 即将到来
+    ol-meteo: 气象可视化
 
 
 # Footer
