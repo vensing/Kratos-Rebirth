@@ -6,6 +6,7 @@
 
 // 提示横幅
 hexo.extend.tag.register('alertbox', function(args){
+    // const content = hexo.render.renderSync({text: args[1], engine: 'markdown'});
     return `<div class="alert alert-${args[0]}">${args[1]}</div>`;
 });
 

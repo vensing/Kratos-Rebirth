@@ -4,7 +4,7 @@ hoster: <a href="https://github.io" target="_blank">Github Pages</a>
 site_logo:
 snow: false
 enableDark: true
-index_post_type: false
+indexPostType: false
 
 # Top Menu
 menu:
@@ -36,15 +36,17 @@ contact:
     instance: 
     username: 
   github: Candinya
-  rss: atom.xml
+  rss:
 timenotice: 本站已运行
+icp: 
+psr:
   
 # Post Page
 posts:
   show_cc: true
   donate: false
   share: true
-  comments: disqusjs
+  comments:
 
 # Disqus
 disqus:
@@ -61,7 +63,7 @@ disqusjs:
 
 # APlayer
 aplayer:
-  enabled: true
+  enabled: false
   playlist: 
   order: random
 
@@ -73,7 +75,29 @@ widgets:
 - category
 - tagcloud
 - posts
-avatarUri: /images/avatar.png
+avatarUri: /images/avatar.webp
 
 # Fancybox
 fancybox: true
+
+# 搜索
+search:
+  enable: true
+  path: search.json
+  field: post # page | post | all. Default post
+  content: true # Include post | page content
+
+# JavaScript相关的配置
+# 由于Javascript被压缩后难以有效编辑与生成，因而为了简化操作，将相关的配置项在生成文件时以独立的json文件写出，调用时使用fetch API获取。
+jsconfig:
+  main:
+    picCDN: false
+    createTime: "1970-01-01 00:00:00"
+    donateBtn: "支持我~"
+    scanNotice: "扫一扫，好不好？"
+    qr_alipay: "/images/alipayqr.webp"
+    qr_wechat: "/images/wechatpayqr.webp"
+    siteLeaveEvent: false
+    leaveTitle: "{{{(>_<)}}}哦哟，崩溃啦~"
+    returnTitle: "(*´∇｀*)欸，又好啦~"
+    copyrightNotice: "该内容采用 CC BY-NC-SA 4.0 许可协议，著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"
