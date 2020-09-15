@@ -17,8 +17,8 @@ menu:
   movie: /movie/
   tools:
     submenu: true
-    cesium-wind: /cesium-wind
-    ol-meteo: /ol-meteo
+    cesium-wind: https://vensing.com/cesium-wind/
+    ol-meteo: https://vensing.com/ol-meteo/
 
 
 label:
@@ -39,7 +39,7 @@ qqg_link:
 contact:
   weibo:
   mail:
-  telegram:
+  telegram: chee5e
   twitter: youmuhoshi
   facebook: 
   linkedin:
@@ -101,7 +101,7 @@ search:
 jsconfig:
   main:
     picCDN: false
-    createTime: "1970-01-01 00:00:00"
+    createTime: "2018-09-18 15:31:36"
     donateBtn: "支持我~"
     scanNotice: "扫一扫，好不好？"
     qr_alipay: "/images/alipayqr.webp"
