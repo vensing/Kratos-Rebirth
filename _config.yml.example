@@ -3,9 +3,12 @@ site_analytics:
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
 site_logo:
 snow: false
-enableDark: true
+enable_dark: true
 cdn: false
-indexPostType: false
+
+# Index
+index:
+  post_type: false
 
 # Top Menu
 menu:
@@ -62,6 +65,17 @@ disqusjs:
   admin: 
   adminlabel: 
 
+# Valine
+valine:
+  app_id: 
+  app_key: 
+  visitor: true
+  enableQQ: false
+
+# Twikoo
+twikoo:
+  env_id: 
+
 # APlayer
 aplayer:
   enabled: false
@@ -93,7 +107,7 @@ search:
 jsconfig:
   main:
     picCDN: false
-    createTime: "1970-01-01 00:00:00"
+    createTime: "1970/01/01 00:00:00"
     donateBtn: "支持我~"
     scanNotice: "扫一扫，好不好？"
     qr_alipay: "/images/alipayqr.webp"
@@ -102,3 +116,9 @@ jsconfig:
     leaveTitle: "{{{(>_<)}}}哦哟，崩溃啦~"
     returnTitle: "(*´∇｀*)欸，又好啦~"
     copyrightNotice: "该内容采用 CC BY-NC-SA 4.0 许可协议，著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"
+
+# Site verify related
+site_verify:
+  google: 
+  baidu: 
+  bing: 

@@ -94,7 +94,7 @@ ul {
     color: var(--text);
 }
 
-body.custom-background {
+body {
     background-color: var(--page-background);
 }
 
@@ -245,7 +245,7 @@ blockquote p {
     color: var(--text-alt);
 }
 
-#disqus_thread {
+.post-comments {
     background-color: var(--tag-background);
 }
 
@@ -300,4 +300,9 @@ a:hover,
     .widget-kratos-about .photo-background {
         background-image: var(--about-image);
     }
+}
+
+/**************** MathJaxColor *****************/
+span.mjx-chtml.MJXc-display {
+    color: var(--text);
 }

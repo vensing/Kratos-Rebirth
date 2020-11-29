@@ -129,6 +129,15 @@ let kr = {};
         }
     };
 
+    const initMathjax = ()=>{
+        if (typeof MathJax !== 'undefined') {
+            // 渲染Mathjax的初始化函数（用于处理ajax后的情况）
+            // 使用了同步处理的方式，可惜第一次加载页面时会双倍触发
+            // （MathJax载入时会自动初始化一次）
+            MathJax.Hub.Typeset();
+        }
+    };
+
     const fancyboxInit = ()=>{
           if (typeof $.fancybox !== 'undefined'){
             $.fancybox.defaults.hash = false;
@@ -172,9 +181,12 @@ ${kr.copyrightNotice}
     const copyEventInit = ()=>{
         if (kr.copyrightNotice) {
             document.body.oncopy = (e)=>{
-                e.preventDefault();
-                if (e.clipboardData) {
-                    e.clipboardData.setData("text/plain", window.getSelection().toString() + copyrightString);
+                const copiedContent = window.getSelection().toString();
+                if (copiedContent.length > 150) {
+                    e.preventDefault();
+                    if (e.clipboardData) {
+                        e.clipboardData.setData("text/plain", copiedContent + copyrightString);
+                    }
                 }
             };
         }
@@ -214,7 +226,7 @@ ${kr.copyrightNotice}
         let now = new Date();
         const grt = new Date(kr.createTime);
         const upTimeNode = document.getElementById("span_dt");
-        setInterval(()=>{
+        setInterval(() => {
             now.setTime(now.getTime() + 1000);
             days = (now - grt) / 1000 / 60 / 60 / 24;
                 dnum = Math.floor(days);
@@ -237,11 +249,78 @@ ${kr.copyrightNotice}
         }, 1000);
     };
 
+    const codeCopyInit = () => {
+        // 使用了clipboard.js，所以非常的简洁，只需在前端生成对应的按钮和指定代码框的ID即可
+        const codeFigures = document.querySelectorAll('figure.highlight');
+        codeFigures.forEach((figure, count) => {
+            figure
+                .getElementsByTagName('table')[0]
+                .getElementsByTagName('tbody')[0]
+                .getElementsByTagName('tr')[0]
+                .getElementsByClassName('code')[0]
+            .setAttribute('id', `code-${count}`);
+
+            figure.innerHTML += 
+            `<button class="copy" data-clipboard-target="#code-${count}">
+                <i class="fa fa-copy"></i>&nbsp;复制
+            </button>`;
+        });
+
+        const clipboard = new ClipboardJS('button.copy');
+
+        clipboard.on('success', (e) => {
+            const origInner = e.trigger.innerHTML;
+            e.trigger.innerHTML = `<i class="fa fa-check-circle"></i>&nbsp;成功~`;
+            setTimeout(() => {
+                e.trigger.innerHTML = origInner;
+            }, 3000);
+
+            e.clearSelection();
+        });
+    };
+
+    const commentsLazyLoad = () => {
+        // 检查当前是否在浏览器中运行
+        const runningOnBrowser = typeof window !== "undefined";
+        // 通过检查 scroll 事件 API 和 User-Agent 来匹配爬虫
+        const isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        // 检查当前浏览器是否支持 IntersectionObserver API
+        const supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+        // 需要懒加载的评论区块
+        const commsArea = document.querySelector('.post-comments.lazy-load');
+        // 加载评论的函数
+        const loadwork = () => {
+            if (window.loadCommentsEventHandler) {
+                // 取消上一个加载事件
+                window.cancelIdleCallback(window.loadCommentsEventHandler);
+            }
+            // 加载新评论模块
+            window.loadCommentsEventHandler = window.requestIdleCallback(load_comm);
+            // 防止二次加载，清理掉函数
+            load_comm = null;
+        };
+        if (runningOnBrowser && !isBot && supportsIntersectionObserver && commsArea !== null) {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    loadwork();
+                    observer.disconnect();
+                }
+            }, { threshold: 0 });
+            observer.observe(commsArea);
+        } else if (typeof load_comm !== 'undefined' && load_comm !== null) {
+            // 直接加载
+            loadwork();
+        }
+    };
+
     $.fn.pjax_reload = ()=>{
         setrandpic();
         fancyboxInit();
         setCopyright();
         saveTitle();
+        initMathjax();
+        codeCopyInit();
+        commentsLazyLoad();
     };
 
     const finishInfo = () => {

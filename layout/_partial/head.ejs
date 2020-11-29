@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh">
 <head>
+  <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="<%- theme.site_logo %>">
   <title><% if (page.title) { %><%- page.title %> | <% } %><%- config.title %></title>
@@ -12,14 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   <% if (is_post()) { %>
-    <% if (page.excerpt) { %>
-      <meta name="description" itemprop="description" content="<%- page.excerpt ? strip_html(page.excerpt) : truncate(strip_html(post.content), {length: 120}) %>" />
-      <meta name="keywords" content="<%- strip_html(list_tags(page.tags, { show_count: false, style: 'none' })) %>" />
-    <% } else { %>
-      <meta name="description" itemprop="description" content="<%- config.description %>" />
-    <% } %>
+    <meta name="keywords" content="<%- strip_html(list_tags(page.tags, { show_count: false, style: 'none' })) %>" />
   <% } else { %>
-    <meta name="description" itemprop="description" content="<%- page.description || config.description %>" />
     <meta name="keywords" content="<%- config.keywords %>" />
   <% } %>
   <%- open_graph({
@@ -27,9 +20,26 @@
     twitter_site: "@" + theme.contact.twitter
   }) %>
   <% if (theme.contact.rss) {%><link rel="alternate" href="<%- theme.contact.rss %>" type="application/atom+xml"><% } %>
+  <!-- 站点验证相关 -->
+  <% if (theme.site_verify) { %>
+    <% if (theme.site_verify.google) { %>
+      <meta name="google-site-verification" content="<%- theme.site_verify.google %>" />
+    <% } %>
+    <% if (theme.site_verify.baidu) { %>
+      <meta name="baidu-site-verification" content="<%- theme.site_verify.baidu %>" />
+    <% } %>
+    <% if (theme.site_verify.bing) { %>
+      <meta name="msvalidate.01" content="<%- theme.site_verify.bing %>" />
+    <% } %>
+  <% } %>
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="<% if (theme.cdn) { %>https://cdn.jsdelivr.net/gh/Candinya/Kratos-Rebirth@latest/source<% } %>/css/kratosr.min.css" type="text/css" media="all">
-  <link rel="stylesheet" id="highlight-css" href="<% if (theme.cdn) { %>https://cdn.jsdelivr.net/gh/Candinya/Kratos-Rebirth@latest/source<% } %>/css/highlight.min.css" type="text/css" media="all">
+  <% if (config.highlight && config.highlight.enable) { %>
+    <link rel="stylesheet" id="highlight-css" href="<% if (theme.cdn) { %>https://cdn.jsdelivr.net/gh/Candinya/Kratos-Rebirth@latest/source<% } %>/css/highlight.min.css" type="text/css" media="all">
+  <% } %>
+  <% if (config.prismjs && config.prismjs.enable) { %>
+    <link rel="stylesheet" id="prismjs-css" href="<% if (theme.cdn) { %>https://cdn.jsdelivr.net/gh/Candinya/Kratos-Rebirth@latest/source<% } %>/css/prismjs.min.css" type="text/css" media="all">
+  <% } %>
   <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
   <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
   <% if (theme.posts.comments == 'disqusjs') { %>
@@ -41,48 +51,13 @@
   <% if (theme.fancybox){ %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
   <% } %>
-  <% if (theme.enableDark) { %>
+  <% if (theme.enable_dark) { %>
     <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
   <% } %>
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
   <% if (theme.posts.share) { %>
-    <script async src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
-  <% } %>
-  <% if (theme.posts.comments == 'disqusjs') { %>
-    <script async src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.6/dist/disqus.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
   <% } %>
 </head>
-<body class="custom-background">
-    <div id="kratos-wrapper">
-        <div id="kratos-page">
-            <div id="kratos-header">
-                <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
-                <header id="kratos-header-section">
-                    <div class="container">
-                        <div class="nav-header">
-                            <div class="color-logo"><a href="/"><%= config.title %></a></div>
-                            <nav id="kratos-menu-wrap">
-                              <ul id="kratos-primary-menu" class="sf-menu">
-                              <% for (var i in theme.menu){ %>
-                                <% if (typeof (theme.menu[i]['submenu']) !== 'undefined') { %>
-                                  <li>
-                                    <a><%- theme.label[i]['submenu'] %></a>
-                                    <ul class="sub-menu">
-                                      <% for (var j in theme.menu[i]){ %>
-                                        <% if (j !== 'submenu') { %>
-                                          <li><a href="<%- url_for(theme.menu[i][j]) %>"><%- theme.label[i][j] %></a></li>
-                                        <% } %>
-                                      <% } %>
-                                    </ul>
-                                  </li>
-                                <% } else { %>
-                                  <li><a href="<%- url_for(theme.menu[i]) %>"><%- theme.label[i] %></a></li>
-                                <% } %>
-                              <% } %>
-                              </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </header>
-            </div>
+

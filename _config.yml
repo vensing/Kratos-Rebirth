@@ -3,9 +3,12 @@ site_analytics:
 hoster: <a href="https://github.io" target="_blank">Github Pages</a>
 site_logo: /images/favicon.ico
 snow: false
-enableDark: true
+enable_dark: true
 cdn: false
-indexPostType: false
+
+# Index
+index:
+  post_type: false
 
 # Top Menu
 menu:
@@ -17,8 +20,8 @@ menu:
   movie: /movie/
   tools:
     submenu: true
-    cesium-wind: https://vensing.com/cesium-wind/
-    ol-meteo: https://vensing.com/ol-meteo/
+    # cesium-wind: https://vensing.com/cesium-wind/
+    # ol-meteo: https://vensing.com/ol-meteo/
 
 
 label:
@@ -30,12 +33,12 @@ label:
   movie: <i class="fa fa-film"></i>电影日历
   tools:
     submenu: <i class="fa fa-flask"></i>实验室
-    cesium-wind: 风场动画
-    ol-meteo: 气象可视化
+    # cesium-wind: 风场动画
+    # ol-meteo: 气象可视化
 
 
 # Footer
-qqg_link: 
+group_link: 
 contact:
   weibo:
   mail:
@@ -49,6 +52,8 @@ contact:
   github: vensing
   rss: atom.xml
 timenotice: 本站已运行
+icp: 
+psr:
 
 # Post Page
 posts:
@@ -69,6 +74,17 @@ disqusjs:
   apikey: bOXtpQHaIHfxsR4VGqOUNxojF6FGpwKEst7Cj3Pxo5IEAKrriBmIoxp3eegUxSqp
   admin: Cheese
   adminlabel: 芝士
+
+# Valine
+valine:
+  app_id: 
+  app_key: 
+  visitor: true
+  enableQQ: false
+
+# Twikoo
+twikoo:
+  env_id: 
 
 # APlayer
 aplayer:
@@ -101,7 +117,7 @@ search:
 jsconfig:
   main:
     picCDN: false
-    createTime: "2018-09-18 15:31:36"
+    createTime: "2018/09/18 15:31:36"
     donateBtn: "支持我~"
     scanNotice: "扫一扫，好不好？"
     qr_alipay: "/images/alipayqr.webp"
@@ -110,3 +126,9 @@ jsconfig:
     leaveTitle: "{{{(>_<)}}}哦哟，崩溃啦~"
     returnTitle: "(*´∇｀*)欸，又好啦~"
     copyrightNotice: "该内容采用 CC BY-NC-SA 4.0 许可协议，著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"
+
+# Site verify related
+site_verify:
+  google: 
+  baidu: 
+  bing: 
