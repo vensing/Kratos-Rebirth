@@ -11,11 +11,11 @@
 
     --banner-image: url('/images/banner.jpg');
     --about-image: url('/images/about.webp');
-    /* --background-image: url('/images/bg.png'); */
+    --background-image: url('/images/bg.webp');
 
     --select-text: #fcfcfc;
     --select-text-bg: #262a30;
-    --text: #4c4d4e;
+    --text: #000;
     --text-alt: #666;
     --link: #1e8cdb;
     --link-hover: #6ec3f5;
