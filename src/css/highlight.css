@@ -123,7 +123,7 @@ figure.highlight table>tbody>tr>td
 figure.highlight {
     position: relative;
     overflow: auto;
-    margin: 20px 16px;
+    margin: 20px 0;
     padding: 0;
     border-radius: 8px;
     font-family: Consolas, 'Courier New', monospace, -apple-system;

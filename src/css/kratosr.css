@@ -192,7 +192,7 @@ input::-moz-focus-inner {
 
 blockquote {
   font-size: 17.5px;
-  margin: 12px 16px;
+  margin: 12px 0;
   border-left: 5px solid #080808;
   padding: 4px 0 5px 10px;
   background: #f1f1f1;
@@ -744,10 +744,10 @@ th {
 
 .alert {
   padding: 15px;
-  border: 1px dashed transparent;
-  border-radius: 10px;
+  /* border: 1px dashed transparent;
+  border-radius: 10px; */
   font-size: 14px;
-  margin: 16px;
+  margin: 0px -20px;
 }
 
 .alert>p,
@@ -790,7 +790,7 @@ th {
 }
 
 .panel {
-  margin: 0 16px 20px;
+  margin: -1px 0px 20px;
   border: 1px solid transparent;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
@@ -889,7 +889,7 @@ th {
 }
 
 .kratos-post-content div.xControl {
-  margin: 20px 16px 0;
+  margin: 20px 0 0;
   font-size: 14px;
   padding: 5px 0;
 }
@@ -1540,7 +1540,7 @@ th {
   margin-bottom: 1em;
   font-size: 16px;
   color: #333;
-  margin: 1em;
+  margin: 1em 0;
 }
 
 .kratos-post-content img {
@@ -2108,7 +2108,7 @@ th {
   border: 1px dashed #ddd;
   border-radius: 10px;
   padding-top: 15px;
-  margin: 0 16px;
+  margin: 16px 0 0;
 }
 
 @media(max-width:991px) {
@@ -2926,7 +2926,10 @@ td.code {
 
 /**************** Search Page related ****************/
 #kr-search-notice.alert {
-  transition:.3s
+  transition:.3s;
+  margin: 0;
+  border: none;
+  border-radius: 0;
 }
 
 #result-posts {
@@ -3034,7 +3037,7 @@ body.custom-background {
 .kratos-hentry h4, 
 .kratos-hentry h5 {
   color: #8f77b5;
-  margin-left: 16px;
+  /* margin-left: 16px; */
 }
 
 .kratos-hentry h3:before {
