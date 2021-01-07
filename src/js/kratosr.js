@@ -348,7 +348,9 @@ ${kr.copyrightNotice}
                 const gap = parseInt((nowDateTime - updateDateTime) / (24 * 3600 * 1000));
                 if (gap > kr.expire_day) {
                     // 内容可能过期，需要提示
-                    $('#expire-day').text(gap).parent().show();
+                    const expireDayTag = document.getElementById('expire-day');
+                    expireDayTag.parentNode.classList.remove('hidden'); 
+                    expireDayTag.innerText = gap;
                 }
             }
             
