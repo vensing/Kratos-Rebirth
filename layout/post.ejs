@@ -27,6 +27,11 @@
                 </div>
             </header>
             <div class="kratos-post-content">
+
+                <div class="alert alert-warning" role="alert" style="display: none;">
+                    本文最后修订于 <span id='expire-day'></span> 天前（<%= date(page.updated) %>），其中的信息可能已经有所发展或者不再适用于现阶段。
+                </div>
+                
                 <% if (page.toc && strip_html(toc(page.content))) { %>
                     <div class="kratos-post-inner-toc">
                         <%- toc(page.content) %>

@@ -345,15 +345,10 @@ ${kr.copyrightNotice}
             if (updateDateTag) {
                 const updateDateTime = new Date(updateDateTag.getAttribute('datetime'));
                 const nowDateTime = Date.now();
-                const gap = nowDateTime - updateDateTime;
-                if (gap > kr.expire_day * 24 * 3600 * 1000) {
+                const gap = parseInt((nowDateTime - updateDateTime) / (24 * 3600 * 1000));
+                if (gap > kr.expire_day) {
                     // 内容可能过期，需要提示
-                    const postContent = document.querySelector('article div.kratos-post-content');
-                    const expiresNotify = 
-                        '<div class="alert alert-warning" role="alert">' + 
-                            '本文最后编辑于' + getTimeString(gap, false) + '前，其中的内容可能需要更新。' +
-                        '</div>';
-                        postContent.innerHTML = expiresNotify + postContent.innerHTML;
+                    $('#expire-day').text(gap).parent().show();
                 }
             }
             

@@ -2427,7 +2427,7 @@ th {
 .linkpage li a p {
   font-size: 12px;
   color: #999;
-  padding-left: 75px
+  padding-left: 90px;
 }
 
 @media(max-width:1200px) {
