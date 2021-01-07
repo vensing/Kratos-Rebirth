@@ -27,7 +27,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    <%- __('last_modify_alert', '<time datetime="' + page.updated + '"></time>') %>
+                    <%- __('last_modify_alert', '<time datetime="' + page.updated + '"></time>', date(page.updated)) %>
                 </div>
                 <% if (page.toc && strip_html(toc(page.content))) { %>
                     <div class="kratos-post-inner-toc">
