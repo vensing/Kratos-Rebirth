@@ -11,7 +11,7 @@
 
     --banner-image: url('/images/banner.jpg');
     --about-image: url('/images/about.webp');
-    --background-image: url('/images/bg.webp');
+    /* --background-image: url('/images/bg.webp'); */
 
     --select-text: #fcfcfc;
     --select-text-bg: #262a30;

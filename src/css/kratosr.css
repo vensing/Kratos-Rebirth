@@ -371,11 +371,12 @@ h2.title-h2 {
 }
 
 .kratos-post-content hr:before {
-  font-size: 1.4em;
-  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2em;
+  font-family: 'Noto Serif SC';
   display: block;
   content: "* * *";
   text-align: center;
+  letter-spacing: 0.5em;
 }
 
 
@@ -487,7 +488,7 @@ svg:not(:root) {
 
 th {
   color: white;
-  background: deepskyblue;
+  background: #a6a6a6;
 }
 
 table col[class*=col-] {
@@ -504,15 +505,16 @@ table th[class*=col-] {
 }
 
 table {
+  width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  margin: 2em 1em
+  margin: 2em 0
 }
 
 td,
 th {
   padding: .2em 1em;
-  border: 1px solid lightblue;
+  border: 1px solid #e2e2e2;
 }
 
 .btn {
