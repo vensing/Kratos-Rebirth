@@ -17,6 +17,8 @@
     --select-text-bg: #262a30;
     --text: #000;
     --text-alt: #666;
+    --quote-color: rgba(0, 0, 0, .1);
+    --quote-text: #9a9a9a;
     --link: #1e8cdb;
     --link-hover: #6ec3f5;
     --border: #3c495b3a;
@@ -38,6 +40,8 @@
         --select-text-bg: #ccc;
         --text: #eee;
         --text-alt: #ccc;
+        --quote-color: rgb(255, 255, 255, .35);
+        --quote-text: #afafaf;
         --link: lightblue;
         --link-hover: #51aded;
         --border: #ccc;
@@ -56,6 +60,8 @@
     --select-text-bg: #ccc;
     --text: #eee;
     --text-alt: #ccc;
+    --quote-color: rgb(255, 255, 255, .35);
+    --quote-text: #afafaf;
     --link: lightblue;
     --link-hover: #51aded;
     --border: #ccc;
@@ -106,14 +112,16 @@ a {
     color: var(--link);
 }
 
-blockquote {
-    background-color: var(--info-background);
-    border-color: var(--border);
-    ;
+blockquote:before{
+    color: var(--quote-color);
 }
 
 blockquote p {
-    color: var(--text);
+    color: var(--quote-text) !important;
+}
+
+hr:before {
+    color: var(--quote-text);
 }
 
 .kratos-cover.kratos-cover-2 {

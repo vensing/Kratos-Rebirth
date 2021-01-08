@@ -191,12 +191,18 @@ input::-moz-focus-inner {
 }
 
 blockquote {
-  font-size: 17.5px;
-  margin: 12px 0;
-  border-left: 5px solid #080808;
-  padding: 4px 0 5px 10px;
-  background: #f1f1f1;
-  /* border-radius: 5px; */
+  position: relative;
+  padding: 0.4em 0 0 2.2em;
+  font-size: 0.96em;
+  margin: 3.5em 0;
+}
+
+blockquote:before {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  content: "\201c";
+  font: 700 62px/1 serif;
 }
 
 blockquote .small,
@@ -359,14 +365,17 @@ h2.title-h2 {
   border: 0;
   border-top: 1px solid #eee
 } */
-hr {
-  height: 23px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.kratos-post-content hr {
+  margin: 2.24em auto;
   border: 0;
-  background-image: url(/images/hr.gif);
-  background-repeat: no-repeat;
-  background-position: center;
+}
+
+.kratos-post-content hr:before {
+  font-size: 1.4em;
+  font-family: 'Noto Serif SC', serif;
+  display: block;
+  content: "* * *";
+  text-align: center;
 }
 
 
@@ -1548,9 +1557,6 @@ th {
   max-width: 100%;
   display: block;
   margin: 1em auto;
-  border: 1px dashed #bbb;
-  border-radius: 2px;
-  padding: 4px;
 }
 
 .kratos-post-content embed {
