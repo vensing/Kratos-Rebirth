@@ -202,7 +202,10 @@ blockquote:before {
   top: -4px;
   left: 0;
   content: "\201c";
-  font: 700 62px/1 serif;
+  font-weight: 700;
+  font-size: 62px;
+  line-height: 1;
+  font-family: Century, Arial, Helvetica, "SimSun", serif;
 }
 
 blockquote .small,
@@ -371,7 +374,7 @@ h2.title-h2 {
 }
 
 .kratos-post-content hr:before {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-family: 'Noto Serif SC';
   display: block;
   content: "* * *";
